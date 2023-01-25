@@ -1,0 +1,45 @@
+CREATE TABLE Food_Truck_Expenses(Id integer primary key, Expense text,Category text, Amount numeric, Month text);
+
+
+INSERT INTO Food_Truck_Expenses VALUES (1,"Food Costs","Supplies", 20000,"March");
+INSERT INTO Food_Truck_Expenses VALUES (2,"Payroll","Administration",15000,"April");
+INSERT INTO Food_Truck_Expenses VALUES (3, "Accounting","Administration",3000,"March");
+INSERT INTO Food_Truck_Expenses VALUES (4, "Advertising","Administration",800,"March");
+INSERT INTO Food_Truck_Expenses VALUES (5,"Credit Card Processing","Administration",15000,"March");
+INSERT INTO Food_Truck_Expenses VALUES (6,"Beverage Costs","Supplies",3000,"March");
+INSERT INTO Food_Truck_Expenses VALUES (7,"Cleaning Products","Supplies",500,"April");
+INSERT INTO Food_Truck_Expenses VALUES (8,"Insurance","Administration",2500,"March");
+INSERT INTO Food_Truck_Expenses VALUES (9,"Fuel","Supplies",1500,"March");
+INSERT INTO Food_Truck_Expenses VALUES (10,"License Fees","Adminstration",250,"April");
+INSERT INTO Food_Truck_Expenses VALUES (11,"Paper Products","Supplies",500,"April");
+INSERT INTO Food_Truck_Expenses VALUES (12,"Social Media Marketing","Administration",300,"March");
+INSERT INTO Food_Truck_Expenses VALUES (13,"Repairs","Supplies",200,"March");
+INSERT INTO Food_Truck_Expenses VALUES(14,"Phone/Internet","Administration",400,"April");
+INSERT INTO Food_Truck_Expenses VALUES (15,"Website","Administration",200,"March");
+INSERT INTO Food_Truck_Expenses VALUES (16,"Uniforms","Supplies",200,"April");
+INSERT INTO Food_Truck_Expenses VALUES (17,"Parking Tickets","Adminstration",500,"April");
+INSERT INTO Food_Truck_Expenses VALUES (18,"Kitchen Utensils","Supplies",300,"March");
+INSERT INTO Food_Truck_Expenses VALUES (19,"Commerical Kitchen Space","Adminstration",500,"April");
+INSERT INTO Food_Truck_Expenses VALUES (20,"Propane","Supplies",100,"March");
+
+
+
+SELECT * FROM Food_Truck_Expenses
+LIMIT 5;
+
+SELECT * FROM Food_Truck_Expenses
+WHERE amount<1000
+ORDER BY expense;
+
+SELECT SUM(Amount) FROM Food_Truck_Expenses
+GROUP By month;
+
+SELECT AVG(Amount) FROM Food_Truck_Expenses
+Group By expense;
+
+SELECT category FROM Food_Truck_Expenses GROUP BY Category Having 
+Amount <3000;
+
+SELECT * FROM Food_Truck_Expenses WHERE amount>100 AND month ="April";
+
+SELECT * FROM Food_Truck_Expenses WHERE amount<2000 OR expense<1000;
